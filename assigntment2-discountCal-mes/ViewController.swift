@@ -4,9 +4,9 @@
 //  as·sign·ment, TYPO Nama Projectnya WKWKW
 //  Created by Muhammad Fahmi on 12/10/22.
 //
-
-// App-nya belum sy tambahin Optional Chaining/Error Handling,
-// Jd, ketika angkanya blum di input pd textField dan di run, maka app akan crash/error runtime
+//  Blum ada constraint jg, tested on Iphone 11 Simulator
+//  App-nya belum sy tambahin Optional Chaining/Error Handling,
+//  Jd, ketika angkanya blum di input pd textField dan di run, maka app akan crash/error runtime.
 
 import UIKit
 
@@ -26,26 +26,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func calculateButton(_ sender: UIButton) {
-        let inputPrice = Double(priceTextField.text!)
+        let inputPrice = Double(priceTextField.text!) // makai double biar lebih precision
         let totalDiscount = Double(discountTextField.text!)
     
-        saveCal = inputPrice! * totalDiscount! / 100
-        finalPriceCal = inputPrice! - saveCal
+        saveCal = inputPrice! * totalDiscount! / 100 // itung jumlah yg di save
+        finalPriceCal = inputPrice! - saveCal // itung harga finalnya
         
-        let price = String(format: "%.2f", [priceTextField!])
-        let discount = String(format: "%.2f", [discountTextField!])
+        // ngubah double ke string
         let finalPrice = String(finalPriceCal)
         let save = String(saveCal)
         
+        // nampilin price/savenya ke textLabel
         finalPriceLabel.text = "\(finalPrice)"
         youSaveLabel.text = "\(save)"
-
     }
-    @IBAction func resetButton(_ sender: UIButton) {
+    
+    @IBAction func resetButton(_ sender: UIButton) { // reset button buat reset semua jd 0/empty cell
         reset()
     }
     
-    func reset() {
+    func reset() { // reset function buat reset semua jd 0/empty cell
         priceTextField.text = ""
         discountTextField.text = ""
         finalPriceLabel.text = "0"
@@ -53,4 +53,3 @@ class ViewController: UIViewController {
     }
 
 }
-

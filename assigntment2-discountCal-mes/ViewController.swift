@@ -1,9 +1,12 @@
 //
 //  ViewController.swift
 //  assigntment2-discountCal-mes
-//
+//  as·sign·ment, TYPO Nama Projectnya WKWKW
 //  Created by Muhammad Fahmi on 12/10/22.
 //
+
+// App-nya belum sy tambahin Optional Chaining/Error Handling,
+// Jd, ketika angkanya blum di input pd textField dan di run, maka app akan crash/error runtime
 
 import UIKit
 
@@ -39,9 +42,15 @@ class ViewController: UIViewController {
 
     }
     @IBAction func resetButton(_ sender: UIButton) {
-        
+        reset()
     }
     
+    func reset() {
+        priceTextField.text = ""
+        discountTextField.text = ""
+        finalPriceLabel.text = "0"
+        youSaveLabel.text = "0"
+    }
 
 }
 
